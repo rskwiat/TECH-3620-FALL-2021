@@ -44,6 +44,30 @@ npm install --global expo-cli
 
 This will install `expo-cli` global so you can initialize a project and get everything working.
 
+> Errors
+
+When installing if you recieve this error:
+
+```
+errno -13
+Error: EACESS: permission denied, access 'user/local/lib/node/modoules'
+{
+  errno: -13,
+  code 'EACCES',
+  syscall: 'access'
+  ...
+}
+```
+
+There is a conflict with installing packages globally and your user account. By running the following command this should grant you permissions to install the package globally. 
+
+```bash
+sudo npm install --global expo-cli
+```
+
+There are [other prefered workarounds](https://stackoverflow.com/questions/48910876/error-eacces-permission-denied-access-usr-local-lib-node-modules), but for our class needs this should be ok.
+
+
 ## Initilizing an Expo Project
 
 We will cover this more next week
