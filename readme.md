@@ -22,7 +22,9 @@ When prompted to install for current users click accept.
 
 ### Windows Users
 
-> If you are windows click on `change` for the installation options and click on the checkbox prompt for installing `chocolatey` this will open up PowerShell and install Python and NodeJS properly.
+> If you are windows click on `change` for the installation options and click on the checkbox prompt for installing `chocolatey` this will open up PowerShell and install `Python` and `NodeJS` properly.
+
+[PowerShell Error - File cannot be loaded because running scripts is disabled on this system.](https://www.thewindowsclub.com/powershell-file-cannot-be-loaded-because-running-scripts-is-disabled-on-this-system)
 
 ### Testing Installation
 
@@ -90,6 +92,6 @@ and then run
 npm start
 ```
 
-This will start the [metro server](http://localhost:19002/), and allow you to scan the generated QR code on your device using ExpoGo.
+This will start the [metro server](http://localhost:19002/), and allow you to scan the generated QR code on your device using ExpoGo. Please make sure you are on the same wifi signals for this to work!
 
 ## [Managed Projects vs. Non-Managed Projects](https://docs.expo.dev/introduction/managed-vs-bare/)
