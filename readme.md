@@ -70,8 +70,26 @@ There are [other prefered workarounds](https://stackoverflow.com/questions/48910
 
 ## Initilizing an Expo Project
 
-We will cover this more next week
+To initialize an Expo project type the following command in your terminal and replace the MyApplicationName with the name of your app:
 
 ```bash
-expo init <MyApplicationName>
+expo init MyApplicationName
 ```
+
+From the menu selection choose `blank` managed project.
+
+After everything is installed change into the directory by running
+
+```bash
+cd MyApplicationName
+```
+
+and then run
+
+```bash
+npm start
+```
+
+This will start the [metro server](http://localhost:19002/), and allow you to scan the generated QR code on your device using ExpoGo.
+
+## [Managed Projects vs. Non-Managed Projects](https://docs.expo.dev/introduction/managed-vs-bare/)
