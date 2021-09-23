@@ -1,13 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
+import Header from "./components/Header";
+
 export default function App() {
   const onPress = () => {
     console.log("button Press")
   }
 
   return (
-    <View style={styles.container}>
+    <View>
+      <Header text="Hello World" />
       <Text>Open up App.js to start working on your app!</Text>
 
       <TouchableOpacity

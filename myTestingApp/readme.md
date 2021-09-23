@@ -37,4 +37,3 @@ The most fundamental component for building a UI, View is a container that suppo
 ### [Stylesheet](https://reactnative.dev/docs/stylesheet)
 
 A StyleSheet is an abstraction similar to CSS StyleSheets
-

@@ -14,3 +14,10 @@ All homework / related class links will be found here. If you have any issues pl
 
 - Take a look at the in class work for myTestingApp, feel free to break edit things.
 - Look through the `readme.md` in myTestingApp for definitions and setup
+
+## September 21 2021 (Flexbox layout)
+
+- [Layout Land -- Jen Simmons](https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag)
+- [Rachel Andrew CSS Flexbox Talk](https://www.youtube.com/watch?v=hj355PRbwSQ)
+- [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout)
+- Reading Chapter 3 of The New CSS Layout
