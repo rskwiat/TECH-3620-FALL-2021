@@ -17,7 +17,17 @@ All homework / related class links will be found here. If you have any issues pl
 
 ## September 21 2021 (Flexbox layout)
 
+> This is on me, I messed up Rachel Andrew's name and who taught the Flexbox class on YouTube. It's Jen Simmons who has the YouTube channel. 
+
 - [Layout Land -- Jen Simmons](https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag)
 - [Rachel Andrew CSS Flexbox Talk](https://www.youtube.com/watch?v=hj355PRbwSQ)
 - [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout)
 - Reading Chapter 3 of The New CSS Layout
+
+
+## [GenderMag Project](https://gendermag.org/index.php)
+
+For the application(s) we are building in class, there will be a short research paper (two page minimum). For the paper you will be applying the GenderMag personas to the applications we built in class and document shortcomings if applicable. 
+
+Using the supplied application and Figma designs apply the GenderMag methods using two of the three profiles. Explain why it works or doesn't work for the two personas you picked, and any improvements the applications would need.
+
