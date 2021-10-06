@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { Text, Button } from "react-native-elements";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import SettingsScreen from "./views/SettingsScreen";
 
 const HomeScreen = ({ navigation }) => (
   <View>
@@ -14,20 +15,16 @@ const HomeScreen = ({ navigation }) => (
   </View>
 );
 
-const AboutScreen = () => (
-  <View>
-    <Text>Home Screen</Text>
-  </View>
-);
-
 const Stack = createNativeStackNavigator();
 
 const App = () => (
   <NavigationContainer>
     <Stack.Navigator
-      initialRouteName="Home">
+      initialRouteName="Settings"
+      screenOptions={{ headerShown: false }}
+    >
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="About" component={AboutScreen} />
+      <Stack.Screen name="Settings" component={SettingsScreen} />
     </Stack.Navigator> 
   </NavigationContainer>
 );

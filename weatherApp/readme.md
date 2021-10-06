@@ -38,6 +38,14 @@ This will install the Navigation library.
 npm install --save @react-navigation/native @react-navigation/native-stack 
 ```
 
+## Installation of `Expo-Web-Browser` Package
+
+[Webbrowser Docs](https://docs.expo.dev/versions/v42.0.0/sdk/webbrowser/). The `expo-web-browser` provides access to the system's web browser and supports handling redirects. (Added 10/5/2021)
+
+```
+expo install expo-web-browser
+```
+
 > Potential Errors
 
 If you run into this error only experienced on a Mac. It is an issue with the `watchman` package.
@@ -69,7 +77,6 @@ Next step:
 ```bash
 brew install update && brew install watchman
 ```
-
 ---
 
 ## Resources
