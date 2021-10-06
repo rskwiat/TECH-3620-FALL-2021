@@ -35,3 +35,6 @@ All homework / related class links will be found here. If you have any issues pl
 For the application(s) we are building in class, there will be a short research paper (two page minimum). For the paper you will be applying the GenderMag personas to the applications we built in class and document shortcomings if applicable. 
 
 Using the supplied application and Figma designs apply the GenderMag methods using two of the three profiles. Explain why it works or doesn't work for the two personas you picked, and any improvements the applications would need.
+
+## October 5th 2021
+- None
