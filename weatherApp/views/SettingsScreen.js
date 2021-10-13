@@ -7,26 +7,44 @@ import {
 import {
   Text,
   Button,
-  Header
+  Header,
 } from "react-native-elements";
 import * as WebBrowser from "expo-web-browser";
+import { urls, color } from "../constants";
+import HeaderIconButton from "../components/HeaderIconButton";
+import Container from "../components/Container";
 
-const SettingsScreen = () => (
+const SettingsScreen = ({ navigation }) => (
   <View>
     <Header
+      leftComponent={
+        <HeaderIconButton
+          name="chevron-left"
+          color={color.white}
+          size={25}
+          onPress={() => navigation.navigate("Home")}
+        />
+      }
       centerComponent={{ 
         text: "Settings", 
         style: { 
-          color: '#fff', 
+          color: color.white, 
           fontSize: 18
         }
       }}
       containerStyle={styles.headerBar}
     />
-    <Text>Settings Screen</Text>
+    
+    <Text>Open Weather</Text>
     <Button 
-      title="Click Me" 
-      onPress={() => WebBrowser.openBrowserAsync("https://google.com")}
+      title="Open Weather Map" 
+      onPress={() => WebBrowser.openBrowserAsync(urls.weather)}
+    />
+
+    <Text>Open Street Map</Text>
+    <Button   
+      title="Open Street Map" 
+      onPress={() => WebBrowser.openBrowserAsync(urls.maps)}
     />
   </View> 
 );

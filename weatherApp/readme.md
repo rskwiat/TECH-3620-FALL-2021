@@ -82,3 +82,4 @@ brew install update && brew install watchman
 ## Resources
 - [React Navigation](https://reactnavigation.org/)
 - [React Elements](https://reactnativeelements.com/docs)
+- [Children Prop](https://codeburst.io/a-complete-guide-to-props-children-in-react-c315fab74e7c)
