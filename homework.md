@@ -29,12 +29,16 @@ All homework / related class links will be found here. If you have any issues pl
 - [Figma Mocks](https://www.figma.com/proto/t1EXEw7Pi3gX0v6IpKXcfL/Weather-Mock?node-id=4%3A8&starting-point-node-id=4%3A8)
 - [React Native Elements](https://reactnativeelements.com/)
 
+## October 5th 2021
+- None
 
+## October 12th 2021
+
+- Submit before next class. Feel free to mock up using psesdo-code **this does not have to work**, update the Buttons to add spacing to the them so there's at least `20px` of space above and below.
+
+---
 ## [GenderMag Project](https://gendermag.org/index.php)
 
 For the application(s) we are building in class, there will be a short research paper (two page minimum). For the paper you will be applying the GenderMag personas to the applications we built in class and document shortcomings if applicable. 
 
 Using the supplied application and Figma designs apply the GenderMag methods using two of the three profiles. Explain why it works or doesn't work for the two personas you picked, and any improvements the applications would need.
-
-## October 5th 2021
-- None

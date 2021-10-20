@@ -35,17 +35,19 @@ const SettingsScreen = ({ navigation }) => (
       containerStyle={styles.headerBar}
     />
     
-    <Text>Open Weather</Text>
-    <Button 
-      title="Open Weather Map" 
-      onPress={() => WebBrowser.openBrowserAsync(urls.weather)}
-    />
+    <Container>
+      <Text>Open Weather</Text>
+      <Button 
+        title="Open Weather Map" 
+        onPress={() => WebBrowser.openBrowserAsync(urls.weather)}
+      />
 
-    <Text>Open Street Map</Text>
-    <Button   
-      title="Open Street Map" 
-      onPress={() => WebBrowser.openBrowserAsync(urls.maps)}
-    />
+      <Text>Open Street Map</Text>
+      <Button   
+        title="Open Street Map" 
+        onPress={() => WebBrowser.openBrowserAsync(urls.maps)}
+      />
+    </Container>
   </View> 
 );
 

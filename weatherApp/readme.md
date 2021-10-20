@@ -77,9 +77,30 @@ Next step:
 ```bash
 brew install update && brew install watchman
 ```
+
+### Example Response from Expo Location
+
+> 8/19/2021 -- This should be the response from the geo-location api, or something very similar.
+
+```
+{
+  "accuracy": 10,
+  "altitude": 0,
+  "altitudeAccuracy": -1,
+  "heading": 106.57,
+  "latitude": 37.33012571,
+  "longitude": -122.02240034,
+  "speed": 3.82,
+}
+```
+
 ---
 
 ## Resources
 - [React Navigation](https://reactnavigation.org/)
 - [React Elements](https://reactnativeelements.com/docs)
 - [Children Prop](https://codeburst.io/a-complete-guide-to-props-children-in-react-c315fab74e7c)
+
+## Guidelines
+-  [iOS Human Interface](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/)
+- [Material Design](https://material.io/design/layout/spacing-methods.html#spacing)

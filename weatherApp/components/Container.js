@@ -7,7 +7,7 @@
  */
 
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Platform } from "react-native";
 
 const Container = ({ children }) => (
   <View style={styles.container}>
@@ -17,8 +17,9 @@ const Container = ({ children }) => (
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 18
+    marginHorizontal: Platform.OS === "ios" ? 13 : 18,
   }
 });
+
 
 export default Container;
