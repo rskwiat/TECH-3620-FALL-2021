@@ -7,4 +7,7 @@ export const color = {
   white: "#fff",
   black: "#000",
   gray: "#333",
+  warningText: "#664d03",
+  warningBackground: "#fff3cd",
+  warningBorder: "#ffecb5",
 };
