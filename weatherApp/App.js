@@ -3,8 +3,10 @@ import { View } from "react-native";
 import { Text, Button } from "react-native-elements";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import SettingsScreen from "./views/SettingsScreen";
 import * as Location from "expo-location";
+
+import SettingsScreen from "./views/SettingsScreen";
+import ErrorScreen from "./views/ErrorScreen";
 
 const HomeScreen = ({ navigation }) => (
   <View>
@@ -35,6 +37,8 @@ const App = () => {
 
     getLocation();
   }, []);
+
+  if (error) return <ErrorScreen />;
   
   return (
     <NavigationContainer>
