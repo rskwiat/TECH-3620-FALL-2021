@@ -8,9 +8,9 @@ import * as Location from "expo-location";
 import SettingsScreen from "./views/SettingsScreen";
 import ErrorScreen from "./views/ErrorScreen";
 
-const HomeScreen = ({ navigation }) => (
+const HomeScreen = ({ navigation, location }) => (
   <View>
-    <Text>Home Screen</Text>
+    <Text>Home Screen {JSON.stringify(location)}</Text>
     <Button
       onPress={() => navigation.navigate("Settings")}
       title="Settings"
@@ -46,7 +46,9 @@ const App = () => {
         initialRouteName="Home"
         screenOptions={{ headerShown: false }}
       >
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Home">
+          {(props) => <HomeScreen {...props} location={location} />}
+        </Stack.Screen>
         <Stack.Screen name="Settings" component={SettingsScreen} />
       </Stack.Navigator> 
     </NavigationContainer>
