@@ -12,13 +12,13 @@ import React from "react";
 import { Icon } from "react-native-elements";
 
 const HeaderIconButton = ({ name, color, size, onPress }) => (
-  <Icon
-    type="feather"
-    name={name}
-    color={color}
-    size={size}
-    onPress={onPress}
-  />
+	<Icon
+		type="feather"
+		name={name}
+		color={color}
+		size={size}
+		onPress={onPress}
+	/>
 );
 
 export default HeaderIconButton;

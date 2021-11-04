@@ -10,15 +10,15 @@ import React from "react";
 import { View, StyleSheet, Platform } from "react-native";
 
 const Container = ({ children }) => (
-  <View style={styles.container}>
-    {children}
-  </View>
+	<View style={styles.container}>
+		{children}
+	</View>
 );
 
 const styles = StyleSheet.create({
-  container: {
-    marginHorizontal: Platform.OS === "ios" ? 13 : 18,
-  }
+	container: {
+		marginHorizontal: Platform.OS === "ios" ? 13 : 18,
+	}
 });
 
 
