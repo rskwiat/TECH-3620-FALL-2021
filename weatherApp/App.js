@@ -5,8 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as Location from "expo-location";
 
-import SettingsScreen from "./views/SettingsScreen";
-import ErrorScreen from "./views/ErrorScreen";
+import { SettingsScreen, ErrorScreen } from "./views";
 
 const HomeScreen = ({ navigation }) => (
 	<View>

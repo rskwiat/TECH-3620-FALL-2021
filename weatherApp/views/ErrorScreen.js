@@ -2,8 +2,7 @@ import React from "react";
 import { StyleSheet, Linking, ImageBackground } from "react-native";
 import { Header, Button } from "react-native-elements";
 
-import Container from "../components/Container";
-import Warning from "../components/Warning";
+import { Container, Warning } from "../components";
 import { color } from "../constants";
 
 import ErrorScreenBackground from "../assets/ErrorScreenBackground.jpg";

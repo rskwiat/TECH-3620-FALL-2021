@@ -4,8 +4,7 @@ import { Text, Button, Header } from "react-native-elements";
 import * as WebBrowser from "expo-web-browser";
 
 import { urls, color } from "../constants";
-import HeaderIconButton from "../components/HeaderIconButton";
-import Container from "../components/Container";
+import { HeaderIconButton, Container } from "../components";
 
 const SettingsScreen = ({ navigation }) => (
 	<View>
