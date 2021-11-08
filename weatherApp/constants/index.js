@@ -11,3 +11,7 @@ export const color = {
   warningBackground: "#fff3cd",
   warningBorder: "#ffecb5",
 };
+
+export const apis = {
+  map: "https://nominatim.openstreetmap.org/"
+};

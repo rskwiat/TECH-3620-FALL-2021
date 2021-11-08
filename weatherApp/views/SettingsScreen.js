@@ -20,8 +20,8 @@ const SettingsScreen = ({ navigation }) => (
 		centerComponent={{ 
 			text: "Settings", 
 			style: { 
-			color: color.white, 
-			fontSize: 18
+				color: color.white, 
+				fontSize: 18
 			}
 		}}
 		containerStyle={styles.headerBar}
