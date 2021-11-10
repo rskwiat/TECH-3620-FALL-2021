@@ -1,20 +1,53 @@
 import React, { useState, useEffect } from "react";
-import { View } from "react-native";
-import { Text, Button } from "react-native-elements";
+import { View, StyleSheet } from "react-native";
+import { Text, Button, Header } from "react-native-elements";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SettingsScreen from "./views/SettingsScreen";
 import * as Location from "expo-location";
 
-const HomeScreen = ({ navigation }) => (
-  <View>
-    <Text>Home Screen</Text>
-    <Button
-      onPress={() => navigation.navigate("Settings")}
-      title="Settings"
-    />
-  </View>
-);
+const HomeScreen = ({ navigation, location }) => {
+  if (!location) return null;
+  const { latitude, longitude } = location.coords;
+  // console.log(latitude)
+  const [locationTitle, setLocationTitle] = useState("Loading...");
+  // console.log(location.coords.latitude);
+
+  useEffect(() => {
+    const getUserLocation = async () => {
+      const request = await fetch(`https://nominatim.openstreetmap.org/reverse&format=json&lat=${latitude}&lon=${longitude}`, { method: "GET" });
+
+      console.log(request);
+
+      // setLocationTitle(response);
+    };
+
+      
+    getUserLocation();
+  }, [latitude, longitude]);
+
+  return (
+    <View>
+      <Text>Home Screen</Text>
+      <Button
+        onPress={() => navigation.navigate("Settings")}
+        title="Settings"
+      />
+    </View>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 const Stack = createNativeStackNavigator();
 
@@ -42,7 +75,9 @@ const App = () => {
         initialRouteName="Home"
         screenOptions={{ headerShown: false }}
       >
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Home">
+          {(props) => <HomeScreen {...props} location={location} />}
+        </Stack.Screen>
         <Stack.Screen name="Settings" component={SettingsScreen} />
       </Stack.Navigator> 
     </NavigationContainer>
