@@ -12,7 +12,7 @@ const HomeScreen = ({ navigation, location }) => {
 
 	useEffect(() => {
 		const fetchCity = async () => {
-			const res = await fetch(`${apis.map}/reverse?format=json&lat=${latitude}1&lon=${longitude}&zoom=12`, { method: 'get' });
+			const res = await fetch(`${apis.map}/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=12`, { method: 'get' });
 			const response = await res.json();
 			setLocationTitle(response.display_name);
 		};
