@@ -15,16 +15,18 @@ const HomeScreen = ({ navigation, location }) => {
 
   useEffect(() => {
     const getUserLocation = async () => {
-      const request = await fetch(`https://nominatim.openstreetmap.org/reverse&format=json&lat=${latitude}&lon=${longitude}`, { method: "GET" });
+      const res = await fetch(`https://nominatim.openstreetmap.org/reverse&format=json&lat=${latitude}1&lon=${longitude}`, { method: "GET" });
+			
+      const response = await res.json();
 
-      console.log(request);
+      console.log(response);
 
       // setLocationTitle(response);
     };
 
       
     getUserLocation();
-  }, [latitude, longitude]);
+  }, []);
 
   return (
     <View>
