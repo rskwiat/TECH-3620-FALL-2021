@@ -10,8 +10,12 @@ export const color = {
   warningText: "#664d03",
   warningBackground: "#fff3cd",
   warningBorder: "#ffecb5",
+  alertText: "#842029",
+  alertBackground: "#f8d7da",
+  alertBorder: "#f5c2c7",
 };
 
 export const apis = {
-  map: "https://nominatim.openstreetmap.org/"
+  map: "https://nominatim.openstreetmap.org",
+  weather: "https://api.openweathermap.org",
 };

@@ -1,32 +1,32 @@
 import React, { useState, useEffect } from "react";
-import { Text, Header, Button } from "react-native-elements";
-import { View, StyleSheet } from "react-native";
-
-import { HeaderIconButton, Container } from "../components";
-import { color, apis } from '../constants';
+import { View } from "react-native";
+import { Header, Text } from "react-native-elements";
+import { HeaderIconButton, Weather } from "../components";
+import { color, apis } from "../constants";
 
 const HomeScreen = ({ navigation, location }) => {
 	if (!location) return null;
-	const [locationTitle, setLocationTitle] = useState("Loading...");
+	const [locationName, setLocationName] = useState("Loading...");
 	const { latitude, longitude } = location.coords;
 
 	useEffect(() => {
-		const fetchCity = async () => {
-			const res = await fetch(`${apis.map}/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=12`, { method: 'get' });
+		const getUserLocation = async () => {
+			const res = await fetch(`${apis.map}/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=12`, { method: "get" });
 			const response = await res.json();
-			setLocationTitle(response.display_name);
+			setLocationName(response.display_name);
 		};
-
-		fetchCity();
-	}, []);
+		
+		getUserLocation();
+	}, [latitude, longitude]);
 
 	return (
 		<View>
-			<Header
-				centerComponent={{ 
-					text: locationTitle, 
-					style: { 
-						color: color.white, 
+			<Header 
+				centerComponent={{
+					text: locationName,
+					style: {
+						color: color.white,
+						fontSize: 18,
 					}
 				}}
 				rightComponent={
@@ -37,22 +37,10 @@ const HomeScreen = ({ navigation, location }) => {
 						onPress={() => navigation.navigate("Settings")}
 					/>
 				}
-				containerStyle={styles.headerBar}
 			/>
-
-			<Container>
-				<Text>Home Screen</Text>
-			</Container>
-
+			<Weather longitude={longitude} latitude={latitude} />
 		</View>
 	);
 }
 
-const styles = StyleSheet.create({
-	headerBar: {
-		marginBottom: 20,
-	}
-});
-
 export default HomeScreen;
-
