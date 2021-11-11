@@ -1,55 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet } from "react-native";
-import { Text, Button, Header } from "react-native-elements";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SettingsScreen from "./views/SettingsScreen";
+import HomeScreen from "./views/HomeScreen";
 import * as Location from "expo-location";
-
-const HomeScreen = ({ navigation, location }) => {
-  if (!location) return null;
-  const { latitude, longitude } = location.coords;
-  // console.log(latitude)
-  const [locationTitle, setLocationTitle] = useState("Loading...");
-  // console.log(location.coords.latitude);
-
-  useEffect(() => {
-    const getUserLocation = async () => {
-      const res = await fetch(`https://nominatim.openstreetmap.org/reverse&format=json&lat=${latitude}1&lon=${longitude}`, { method: "GET" });
-			
-      const response = await res.json();
-
-      console.log(response);
-
-      // setLocationTitle(response);
-    };
-
-      
-    getUserLocation();
-  }, []);
-
-  return (
-    <View>
-      <Text>Home Screen</Text>
-      <Button
-        onPress={() => navigation.navigate("Settings")}
-        title="Settings"
-      />
-    </View>
-  );
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 const Stack = createNativeStackNavigator();
 
