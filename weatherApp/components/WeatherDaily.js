@@ -8,13 +8,15 @@ const WeatherDaily =  ({ daily }) => (
 		<Text style={styles.dailyHeader}>Daily Forecast</Text>
 		<ScrollView>
 			{daily.map((d, i) => {
-				const { dt, temp } = d;
+				const { dt, temp, weather } = d;
 				const dateOfDaytheWeek = new Date(dt * 1000).getDay();
 				const day = convertToDay(dateOfDaytheWeek);
 				return (
 					<View key={i} style={styles.dailyRow}>
 						<Text style={styles.dailyRowHeader}>{day}</Text>  
-						<Text style={styles.dailyRowTemp}>{temp.min}&deg;F / {temp.max}&deg;F</Text>
+						<Text style={styles.dailyRowTemp}>
+							{temp.min}&deg;F / {temp.max}&deg;F
+						</Text>
 					</View>
 				);
 			})}

@@ -5,6 +5,7 @@ import Container from "./Container";
 import WeatherAlerts from "./WeatherAlerts";
 import WeatherDaily from "./WeatherDaily";
 import WeatherHourly from "./WeatherHourly";
+import WeatherIcon from "./WeatherIcon";
 import { apis } from "../constants";
 import keys from "../constants/keys";
 
@@ -32,9 +33,7 @@ const Weather = ({ longitude, latitude }) => {
 			<View style={styles.description}>
 				<Text>Current Weather</Text>
 				<Text h1 h1Style={styles.tempStyles}>{temp} &deg;F</Text>
-				{weather.map((w, i) => {
-					return <Text key={i}>{w.description}</Text>
-				})}
+				{weather && <WeatherIcon weather={weather} description />}
 				<Text h3 h3Style={styles.feelsLikeStyles}>Feels Like: {feels_like}&deg;F</Text>
 			</View>
 			{alerts && <WeatherAlerts alerts={alerts} />}

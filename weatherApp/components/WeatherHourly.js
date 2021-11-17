@@ -30,8 +30,9 @@ const styles = StyleSheet.create({
 		marginRight: 10,
 	},
 	hourRowTemp: {
+		paddingTop: 15,
 		fontSize: 15,
 	}
-})
+});
 
 export default WeatherHourly;
