@@ -1,8 +1,8 @@
-// Starting template of the HomeScreen from here we will be doing several data fetching events and storing that information.
 import React, { useState, useEffect } from "react";
 import { View } from "react-native";
 import { Header, Text } from "react-native-elements";
 import HeaderIconButton from "../components/HeaderIconButton";
+import Weather from "../components/Weather";
 import { color } from "../constants";
 
 const HomeScreen = ({ navigation, location }) => {
@@ -39,7 +39,7 @@ const HomeScreen = ({ navigation, location }) => {
 					/>
 				}
 			/>
-			<Text>Hello</Text>
+			<Weather latitude={latitude} longitude={longitude} />
 		</View>
 	);
 }
