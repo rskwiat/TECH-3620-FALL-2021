@@ -1,44 +1,30 @@
-// cloud
-// cloud-drizzle
-// cloud-lightning
-// cloud-rain
-// cloud-snow
-// sun
-// wind
-// moon
-
 import React from "react";
-import { View, Text } from "react-native";
-import { Icon } from "react-native-elements";
+import { View, StyleSheet } from "react-native";
+import { Icon, Text } from "react-native-elements";
+import { iconName } from "../constants/utils";
 
-const iconName = (value) => {
-	switch (value) {
-		case "Clouds":
-			return "cloud";
-		case "Rain":
-			return "cloud-rain";
-		case "Snow":
-			return "cloud-snow";
-		case "Windy":
-			return "wind";
-		default:
-			return "sun";
-	};
-};
-
-const WeatherIcon = ({ weather, description }) => (
+const WeatherIcon = ({ weather, iconSize, showDescription }) => (
 	<View>
 		{weather.map((w, i) => {
-			const { main } = weather;
-			const name = iconName(main);
+			const { description, main } = w;
+			const icon = iconName(main);
 			return (
-				<View>
-					<Icon name={name} type="feather" />
-					{description && <Text key={i}>{w.description}</Text>}
+				<View key={i}>
+					<Icon type="feather" size={iconSize} name={icon} />
+					{showDescription && <Text style={styles.description}>{description}</Text>}
 				</View>
 			);
 		})}
 	</View>
 );
+
+const styles = StyleSheet.create({
+	description: {
+		marginTop: 10,
+		fontSize: 18,
+		fontWeight: "bold",
+		textTransform: "capitalize"
+	}
+})
 
 export default WeatherIcon;

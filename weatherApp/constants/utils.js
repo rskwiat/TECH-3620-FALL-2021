@@ -16,3 +16,33 @@ export const convertToDay = (date) => {
 			return "Saturday";
 	}
 };
+
+export const iconName = (name) => {
+	switch (name) {
+		case "Clouds":
+			return "cloud";
+		case "Rain":
+			return "cloud-rain";
+		case "Snow":
+			return "cloud-snow";
+		case "Windy":
+			return "wind";
+		default:
+			return "sun";
+	}
+};
+
+export const imageBackground = (name) => {
+	switch (name) {
+		case "Clouds":
+			return "CloudyImage";
+		case "Rain":
+			return "RainImage";
+		case "Snow":
+			return "SnowImage";
+		case "Windy":
+			return "WindyImage";
+		default:
+			return "SunnyImage";
+	}
+};

@@ -1,15 +1,18 @@
 import React from "react";
 import { ScrollView, View, StyleSheet } from "react-native";
 import { Text } from "react-native-elements";
+import WeatherIcon from "./WeatherIcon";
 
 const WeatherHourly =  ({ hourly }) => (
 	<View style={styles.hourly}>
 		<Text style={styles.hourlyHeader}>Hourly Forecast</Text>
 		<ScrollView horizontal>
 		{hourly.map((hour, i) => {
+			const { weather, feels_like } = hour; 
 			return (
 				<View key={i} style={styles.hourView}>
-					<Text style={styles.hourRowTemp}>{hour.feels_like}&deg;F</Text>
+					{weather && <WeatherIcon weather={weather} iconSize={26} />}
+					<Text style={styles.hourRowTemp}>{feels_like}&deg;F</Text>
 				</View>
 			);
 		})}
@@ -24,13 +27,13 @@ const styles = StyleSheet.create({
 	hourlyHeader: {
 		fontSize: 20,
 		fontWeight: "bold",
-		marginBottom: 10,
+		marginBottom: 15,
 	},
 	hourView: {
 		marginRight: 10,
 	},
 	hourRowTemp: {
-		paddingTop: 15,
+		paddingTop: 10,
 		fontSize: 15,
 	}
 });

@@ -1,6 +1,7 @@
 import React from "react";
 import { ScrollView, View, StyleSheet } from "react-native";
 import { Text } from "react-native-elements";
+import WeatherIcon from "./WeatherIcon";
 import { convertToDay } from "../constants/utils";
 
 const WeatherDaily =  ({ daily }) => (
@@ -13,10 +14,13 @@ const WeatherDaily =  ({ daily }) => (
 				const day = convertToDay(dateOfDaytheWeek);
 				return (
 					<View key={i} style={styles.dailyRow}>
-						<Text style={styles.dailyRowHeader}>{day}</Text>  
-						<Text style={styles.dailyRowTemp}>
-							{temp.min}&deg;F / {temp.max}&deg;F
-						</Text>
+						<Text style={styles.dailyRowHeader}>{day}</Text>
+						<View style={styles.dailyIconRow}>
+							{weather && <WeatherIcon weather={weather} iconSize={20} />}
+							<Text style={styles.dailyRowTemp}>
+								{temp.min}&deg;F / {temp.max}&deg;F
+							</Text>
+						</View>
 					</View>
 				);
 			})}
@@ -38,11 +42,15 @@ const styles = StyleSheet.create({
 		justifyContent: "space-between",
 		marginBottom: 15,
 	},
+	dailyIconRow: {
+		flexDirection: "row",
+	},
 	dailyRowHeader: {
 		fontSize: 15,
 		fontWeight: "bold",
 	},
 	dailyRowTemp: {
+		marginLeft: 15,
 		fontSize: 15,
 	}
 })
