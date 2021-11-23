@@ -5,6 +5,6 @@
 
 const keys = {
 	appId: "<TEST-API-KEY>",
-  };
+};
   
-  export default keys;
+export default keys;

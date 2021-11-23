@@ -46,3 +46,9 @@ export const imageBackground = (name) => {
 			return "SunnyImage";
 	}
 };
+
+export const renderTempDegrees = (value) => {
+	if (value) return `F`;
+
+	return "C"
+};

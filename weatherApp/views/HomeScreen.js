@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { View } from "react-native";
-import { Header, Text } from "react-native-elements";
+import { Header } from "react-native-elements";
 import { HeaderIconButton, Weather } from "../components";
 import { color, apis } from "../constants";
+import LoadingScreen from "./LoadingScreen"
 
 const HomeScreen = ({ navigation, location }) => {
-	if (!location) return null;
+	if (!location) return <LoadingScreen />;
 	const [locationName, setLocationName] = useState("Loading...");
 	const { latitude, longitude } = location.coords;
 

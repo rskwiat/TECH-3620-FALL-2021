@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as Location from "expo-location";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 import { HomeScreen, SettingsScreen, ErrorScreen } from "./views";
 
@@ -28,17 +30,19 @@ const App = () => {
   	if (error) return <ErrorScreen />;
 
 	return (
-		<NavigationContainer>
-			<Stack.Navigator
-				initialRouteName="Home"
-				screenOptions={{ headerShown: false }}
-			>
-			<Stack.Screen name="Home">
-				{(props) => <HomeScreen {...props} location={location} />}
-			</Stack.Screen>
-			<Stack.Screen name="Settings" component={SettingsScreen} />
-			</Stack.Navigator> 
-		</NavigationContainer>
+		<Provider store={store}>
+			<NavigationContainer>
+				<Stack.Navigator
+					initialRouteName="Home"
+					screenOptions={{ headerShown: false }}
+				>
+				<Stack.Screen name="Home">
+					{(props) => <HomeScreen {...props} location={location} />}
+				</Stack.Screen>
+				<Stack.Screen name="Settings" component={SettingsScreen} />
+				</Stack.Navigator> 
+			</NavigationContainer>
+		</Provider>
 	);
 };
 

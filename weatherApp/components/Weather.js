@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { View, StyleSheet, ImageBackground, Dimensions } from "react-native";
 import { Text } from "react-native-elements";
 import Container from "./Container";
@@ -8,13 +9,14 @@ import WeatherHourly from "./WeatherHourly";
 import WeatherIcon from "./WeatherIcon";
 import { apis } from "../constants";
 import keys from "../constants/keys";
-import { imageBackground } from "../constants/utils";
+import { imageBackground, renderTempDegrees } from "../constants/utils";
 
 import CloudyImage from "../assets/backgrounds/cloudy.jpg";
 import RainImage from "../assets/backgrounds/raining.jpg";
 import SnowImage from "../assets/backgrounds/snow.jpg";
 import SunnyImage from "../assets/backgrounds/sunny.jpg";
 import WindyImage from "../assets/backgrounds/windy.jpg";
+import LoadingScreen from "../views/LoadingScreen";
 
 const backgrounds = {
 	CloudyImage,
@@ -25,20 +27,23 @@ const backgrounds = {
 };
 
 const Weather = ({ longitude, latitude }) => {
-	if (!longitude || !latitude) return null;
+	if (!longitude || !latitude) return <LoadingScreen />;
 	const [data, setData] = useState(null);
+	const useFahrenheit = useSelector((state) => state.weather.fahrenheit);
+	const units = useFahrenheit ? "imperial" : "metric";
+	const degrees = renderTempDegrees(useFahrenheit);
 
 	useEffect(() => {
 		const fetchWeather = async () => {
-			const res = await fetch(`${apis.weather}/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${keys.appId}&units=imperial&exclude=minutely`, { method: "GET" });
+			const res = await fetch(`${apis.weather}/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${keys.appId}&units=${units}&exclude=minutely`, { method: "GET" });
 			const response = await res.json();
 			setData(response);
 		};
 
 		fetchWeather();
-	}, [longitude,  latitude]);
+	}, [longitude, latitude, useFahrenheit]);
 
-	if (!data || !data.current) return null;
+	if (!data || !data.current) return <LoadingScreen loadingData />;
 
 	const { temp, feels_like, humidity, uvi, wind_speed, weather } = data.current;
 	const { daily, hourly, alerts } = data;
@@ -49,10 +54,10 @@ const Weather = ({ longitude, latitude }) => {
 		<ImageBackground source={backgrounds[bgi]} resizeMode="cover" style={styles.imageBackground}>
 			<Container>
 				<View style={styles.description}>
-					<Text>Current Weather</Text>
-					<Text h1 h1Style={styles.tempStyles}>{temp} &deg;F</Text>
+					<Text style={styles.current}>Current Weather</Text>
+					<Text h1 h1Style={styles.tempStyles}>{temp} &deg;{degrees}</Text>
 					{weather && <WeatherIcon iconSize={42} weather={weather} showDescription />}
-					<Text h3 h3Style={styles.feelsLikeStyles}>Feels Like: {feels_like}&deg;F</Text>
+					<Text h3 h3Style={styles.feelsLikeStyles}>Feels Like: {feels_like}&deg;{degrees}</Text>
 				</View>
 				{alerts && <WeatherAlerts alerts={alerts} />}
 				<View style={styles.infoBlock}>
@@ -71,15 +76,18 @@ const styles = StyleSheet.create({
 	imageBackground: {
 		height: Dimensions.get("window").height,
 	},
+	current: {
+		fontSize: 18,
+	},
 	description: {
-		marginTop: 40,
+		marginTop: 20,
 		flexDirection: "column",
 		alignItems: "center",
 	},
 	infoBlock: {
 		flexDirection: "row",
 		justifyContent: "space-between",
-		marginTop: 40,
+		marginTop: 20,
 		paddingVertical: 10,
 		paddingHorizontal: 10,
 		backgroundColor: "rgba(255, 255, 255, .45)",
@@ -92,7 +100,6 @@ const styles = StyleSheet.create({
 		fontSize: 16
 	},
 	tempStyles: {
-		paddingTop: 30,
 		paddingBottom: 10,
 		fontSize: 65,
 		fontWeight: 'bold',
