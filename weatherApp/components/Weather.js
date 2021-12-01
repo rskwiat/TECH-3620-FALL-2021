@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, ScrollView } from "react-native";
 import { Text } from "react-native-elements";
 import Container from "./Container";
 import keys from "../constants/keys";
@@ -20,12 +20,27 @@ const Weather = ({ latitude, longitude }) => {
 
 	if (!data) return null;
 
+	const { hourly, daily } = data;
+
 	return (
 		<Container>
 			<View>
 				<Text h1>{data.current.temp}</Text>
 				<Text h3>{data.current.feels_like}</Text>
 			</View>
+
+			<ScrollView horizontal>
+			{hourly.map((hour, i) => {
+				return <Text key={i}>{hour.feels_like}</Text>
+			})}
+			</ScrollView>
+
+			<ScrollView>
+			{daily.map((dail, i) => {
+				return <Text key={i}>{dail.temp.day}</Text>
+			})}
+			</ScrollView>
+
 		</Container>
 	);
 };

@@ -4,7 +4,7 @@
 */
 
 const keys = {
-  appId: "<TEST-API-KEY>",
+  appId: "<YOUR KEY HERE>",
 };
 
 export default keys;
