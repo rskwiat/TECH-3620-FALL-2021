@@ -13,6 +13,7 @@ export const color = {
   alertText: "#842029",
   alertBackground: "#f8d7da",
   alertBorder: "#f5c2c7",
+  transparentBackground: "rgba(255, 255, 255, .45)",
 };
 
 export const apis = {

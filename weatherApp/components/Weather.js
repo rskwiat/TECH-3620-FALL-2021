@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import { View, StyleSheet, ImageBackground, Dimensions } from "react-native";
 import { Text } from "react-native-elements";
@@ -7,7 +8,7 @@ import WeatherAlerts from "./WeatherAlerts";
 import WeatherDaily from "./WeatherDaily";
 import WeatherHourly from "./WeatherHourly";
 import WeatherIcon from "./WeatherIcon";
-import { apis } from "../constants";
+import { apis, color } from "../constants";
 import keys from "../constants/keys";
 import { imageBackground, renderTempDegrees } from "../constants/utils";
 
@@ -72,6 +73,11 @@ const Weather = ({ longitude, latitude }) => {
 	);
 };
 
+Weather.propTypes = {
+	latitude: PropTypes.string.isRequired,
+	longitude: PropTypes.string.isRequired,
+}
+
 const styles = StyleSheet.create({
 	imageBackground: {
 		height: Dimensions.get("window").height,
@@ -90,9 +96,9 @@ const styles = StyleSheet.create({
 		marginTop: 20,
 		paddingVertical: 10,
 		paddingHorizontal: 10,
-		backgroundColor: "rgba(255, 255, 255, .45)",
+		backgroundColor: color.transparentBackground,
 		borderWidth: 1,
-		borderColor: "rgba(255, 255, 255, .45)",
+		borderColor: color.transparentBackground,
 		borderStyle: "solid",
 		borderRadius: 10,
 	},

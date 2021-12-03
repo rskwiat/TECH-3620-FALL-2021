@@ -27,7 +27,7 @@ const App = () => {
 		getLocation();
 	}, []);
 
-  	if (error) return <ErrorScreen />;
+	if (error) return <ErrorScreen />;
 
 	return (
 		<Provider store={store}>

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { View, StyleSheet, Text } from "react-native";
 import { color } from "../constants";
 
@@ -7,6 +8,10 @@ const Warning = ({ text }) => (
 		<Text style={styles.warningText}>{text}</Text>
 	</View>
 );
+
+Warning.propTypes = {
+	text: PropTypes.string.isRequired
+};
 
 const styles = StyleSheet.create({
 	warning: {

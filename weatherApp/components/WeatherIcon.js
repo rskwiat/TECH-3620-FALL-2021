@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { View, StyleSheet } from "react-native";
 import { Icon, Text } from "react-native-elements";
 import { iconName } from "../constants/utils";
@@ -18,6 +19,17 @@ const WeatherIcon = ({ weather, iconSize, showDescription }) => (
 	</View>
 );
 
+WeatherIcon.propTypes = {
+	weather: PropTypes.array.isRequired,
+	iconSize: PropTypes.number,
+	showDescription: PropTypes.bool
+};
+
+WeatherIcon.defaultProps = {
+	iconSize: 18,
+	showDescription: false
+};
+
 const styles = StyleSheet.create({
 	description: {
 		marginTop: 10,
@@ -25,6 +37,6 @@ const styles = StyleSheet.create({
 		fontWeight: "bold",
 		textTransform: "capitalize"
 	}
-})
+});
 
 export default WeatherIcon;

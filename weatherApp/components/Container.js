@@ -7,6 +7,7 @@
  */
 
 import React from "react";
+import PropTypes from "prop-types";
 import { View, StyleSheet, Platform } from "react-native";
 
 const Container = ({ children }) => (
@@ -15,11 +16,17 @@ const Container = ({ children }) => (
 	</View>
 );
 
+Container.propTypes = {
+	children: PropTypes.oneOfType([
+		PropTypes.arrayOf(PropTypes.node),
+		PropTypes.node,
+	]).isRequired
+};
+
 const styles = StyleSheet.create({
 	container: {
 		marginHorizontal: Platform.OS === "ios" ? 13 : 18,
 	}
 });
-
 
 export default Container;

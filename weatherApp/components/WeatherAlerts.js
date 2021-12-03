@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { View, StyleSheet } from "react-native";
 import { Text } from "react-native-elements";
 import { color } from "../constants";
@@ -10,6 +11,10 @@ const WeatherAlerts = ({ alerts }) => (
 		})}
 	</View>
 );
+
+WeatherAlerts.propTypes = {
+	alerts: PropTypes.array.isRequired,
+};
 
 const styles = StyleSheet.create({
 	alert: {

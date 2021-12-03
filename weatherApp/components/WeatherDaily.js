@@ -1,8 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import { ScrollView, View, StyleSheet } from "react-native";
 import { Text } from "react-native-elements";
 import WeatherIcon from "./WeatherIcon";
+import { color } from "../constants";
 import { convertToDay, renderTempDegrees } from "../constants/utils";
 
 const WeatherDaily =  ({ daily }) => {
@@ -34,14 +36,18 @@ const WeatherDaily =  ({ daily }) => {
 	)
 };
 
+WeatherDaily.propTypes = {
+	daily: PropTypes.array.isRequired,
+};
+
 const styles = StyleSheet.create({
 	daily: {
 		marginTop: 20,
 		paddingVertical: 10,
 		paddingHorizontal: 10,
-		backgroundColor: "rgba(255, 255, 255, .45)",
+		backgroundColor: color.transparentBackground,
 		borderWidth: 1,
-		borderColor: "rgba(255, 255, 255, .45)",
+		borderColor: color.transparentBackground,
 		borderStyle: "solid",
 		borderRadius: 10,
 	},

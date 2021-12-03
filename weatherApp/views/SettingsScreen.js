@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
 import { View, StyleSheet } from "react-native";
 import { Text, Button, Header, Switch } from "react-native-elements";
@@ -63,6 +64,12 @@ const SettingsScreen = ({ navigation }) => {
 		</View>
   )
 }
+
+SettingsScreen.propTypes = {
+	navigation: PropTypes.shape({
+		navigate: PropTypes.func.isRequired
+	}),
+};
 
 const styles = StyleSheet.create({
 	toggleBar: {

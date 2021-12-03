@@ -9,6 +9,7 @@ Reusable Icon Button for the header component
 */
 
 import React from "react";
+import PropTypes from "prop-types";
 import { Icon } from "react-native-elements";
 
 const HeaderIconButton = ({ name, color, size, onPress }) => (
@@ -20,5 +21,12 @@ const HeaderIconButton = ({ name, color, size, onPress }) => (
 		onPress={onPress}
 	/>
 );
+
+HeaderIconButton.propTypes = {
+	name: PropTypes.string.isRequired,
+	color: PropTypes.string.isRequired,
+	size: PropTypes.number.isRequired,
+	onPress: PropTypes.func.isRequired
+};
 
 export default HeaderIconButton;

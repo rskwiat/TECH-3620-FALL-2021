@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { View, ActivityIndicator, StyleSheet } from "react-native";
 
 const LoadingScreen = ({ loadingData }) => {
@@ -8,6 +9,14 @@ const LoadingScreen = ({ loadingData }) => {
 			<ActivityIndicator size="large" />
 		</View>
 	);
+};
+
+LoadingScreen.propTypes = {
+	loadingData: PropTypes.bool,
+};
+
+LoadingScreen.defaultProps = {
+	loadingData: false,
 };
 
 const styles = StyleSheet.create({

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import { View } from "react-native";
 import { Header } from "react-native-elements";
 import { HeaderIconButton, Weather } from "../components";
@@ -43,5 +44,17 @@ const HomeScreen = ({ navigation, location }) => {
 		</View>
 	);
 }
+
+HomeScreen.propTypes = {
+	navigation: PropTypes.shape({
+		navigate: PropTypes.func.isRequired
+	}),
+	location: PropTypes.shape({
+		coords: PropTypes.shape({
+			latitude: PropTypes.string.isRequired,
+			longitude: PropTypes.string.isRequired,
+		}),
+	})
+};
 
 export default HomeScreen;

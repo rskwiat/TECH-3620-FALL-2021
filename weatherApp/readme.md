@@ -46,6 +46,35 @@ npm install --save @react-navigation/native @react-navigation/native-stack
 expo install expo-web-browser
 ```
 
+## Installation of the `Redux Toolkit` Packages
+
+[Redux]() Allows us to push data to a global state and be read from anywhere in the app. [Redux Tool Kit or RTK]() is an opinonated framework that takes care of a lot of boilerplate and setup.
+
+```
+npm install --save react-redux @reduxjs/toolkit
+```
+
+## Installation of Linting Tools and Configs
+
+```
+npm install --save-dev eslint eslint-plugin-react eslint-plugin-react-native
+```
+
+ESlint is not needed for final production applications.
+
+```
+npm install --save prop-types
+```
+
+PropTypes is used for typechecking our props in our application.
+
+Eslint Config can be [found here](https://github.com/rskwiat/TECH-3620-FALL-2021/blob/master/configs/.eslintrc)
+
+Just add the `.eslintrc` file next the `App.js` file in the root directory.
+
+
+
+
 > Potential Errors
 
 If you run into this error only experienced on a Mac. It is an issue with the `watchman` package.
