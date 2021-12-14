@@ -74,8 +74,8 @@ const Weather = ({ longitude, latitude }) => {
 };
 
 Weather.propTypes = {
-	latitude: PropTypes.string.isRequired,
-	longitude: PropTypes.string.isRequired,
+	latitude: PropTypes.number.isRequired,
+	longitude: PropTypes.number.isRequired,
 }
 
 const styles = StyleSheet.create({
